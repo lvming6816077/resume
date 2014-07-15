@@ -1,4 +1,4 @@
 resume
 ======
 
-my resime page
+My resume page
