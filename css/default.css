@@ -138,7 +138,19 @@ table {
 html {
    -webkit-font-smoothing: antialiased;
 }
-
+@font-face {
+   font-family: FZZZHO;
+   src:url('FZZZHONGHJW_0.TTF');
+}
+body {
+   background: #fff;
+   font-family: 'FZZZHO','Helvetica Neue', Helvetica, 'Lucida Grande', Arial, 'Hiragino Sans GB', 微软雅黑, 'WenQuanYi Micro Hei', STHeiti, SimSun, sans-serif;
+   font-weight: normal;
+   font-size: 15px;
+   color: #838C95;
+   -webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
+   -webkit-text-size-adjust: 100%;
+}
 body {
    background: #fff;
    font-family: 'Helvetica Neue', Helvetica, 'Lucida Grande', Arial, 'Hiragino Sans GB', 微软雅黑, 'WenQuanYi Micro Hei', STHeiti, SimSun, sans-serif;
