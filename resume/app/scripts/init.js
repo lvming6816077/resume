@@ -48,14 +48,13 @@ new WOW().init();
    $('.smoothscroll').on('click',function (e) {
 	    e.preventDefault();
 
-	    var target = this.hash,
-	    $target = $(target);
-
-	    $('html, body').stop().animate({
-	        'scrollTop': $target.offset().top
-	    }, 800, 'swing', function () {
-	        window.location.hash = target;
-	    });
+      var target = this.hash,
+      $target = $(target);
+      $('html, body').stop().animate({
+          'scrollTop': $target.offset().top
+      }, 600, 'swing', function () {
+          window.location.hash = target;
+      });
 	});
 
 
@@ -71,10 +70,10 @@ new WOW().init();
       handler: function(event, direction) {
 
 		   var active_section;
-
 			active_section = $(this);
-			if (direction === "up") active_section = active_section.prev();
-
+      
+			if (direction === "up") active_section = active_section.prevAll('section').eq(0);
+      console.log(active_section);
 			var active_link = $('#nav-wrap a[href="#' + active_section.attr("id") + '"]');
 
          navigation_links.parent().removeClass("current");
@@ -91,12 +90,12 @@ new WOW().init();
 /* equal to the browser height.
 ------------------------------------------------------ */
 
-   $('header').css({ 'height': $(window).height() });
+   $('section').not('#contact').css({ 'height': $(window).height() });
    $('#my_profile').css({ 'height': $(window).height() });
    
    $(window).on('resize', function() {
         $('#my_profile').css({ 'height': $(window).height() });
-        $('header').css({ 'height': $(window).height() });
+        $('#home').css({ 'height': $(window).height() });
         $('body').css({ 'width': $(window).width() })
    });
 
@@ -197,28 +196,39 @@ var flag = true;
         profileFlag = false;
       }
     };
-   $(window).on('scroll', function() {
-
-		var h = $('header').height();
+   $(window).on('scroll', function(e) {
+    e.preventDefault();
+		var h = $('#home').height();
 		var y = $(window).scrollTop();
     changeSkillWidth(y);
-      var nav = $('#nav-wrap');
+    var nav = $('#nav-wrap');
       
-	   if ( (y > h*.20) && (y < h) && ($(window).outerWidth() > 768 ) ) {
-	      nav.fadeOut('fast');
-	   } 
-      else {
-         if (y < h*.20) {
-            nav.removeClass('opaque').fadeIn('fast');
-         }
-         else {
-            nav.addClass('opaque').fadeIn('fast');
-         }
-      }
+   if ( (y > h*.20) && (y < h) && ($(window).outerWidth() > 768 ) ) {
+      nav.fadeOut('fast');
+   } 
+    else {
+       if (y < h*.20) {
+          nav.removeClass('opaque').fadeIn('fast');
+       }
+       else {
+          nav.addClass('opaque').fadeIn('fast');
+       }
+    }
 
 	});
 
-
+   $(window).on('mousewheel DOMMouseScroll', function(e){
+       e.preventDefault();
+       var event = e.originalEvent,
+               delta = event.wheelDelta || -event.detail,
+               isMouseScrollDown = delta < 0 ? true : false;
+       if (isMouseScrollDown) {
+        $('#nav li').filter('.current').next('li').find('a').click();
+       } else {
+        $('#nav li').filter('.current').prev('li').find('a').click();
+       }
+       
+   });
 /*----------------------------------------------------*/
 /*	Modal Popup
 ------------------------------------------------------*/

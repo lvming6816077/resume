@@ -28,7 +28,7 @@ body { background: #0f0f0f; }
 /* b. Header Styles
 /* ------------------------------------------------------------------ */
 
-header {
+#home {
    position: relative;
    height: 800px;
    min-height: 500px;
@@ -44,13 +44,13 @@ header {
 }
 
 /* vertically center banner section */
-header:before {
+#home:before {
    content: '';
    display: inline-block;
    vertical-align: middle;
    height: 100%;
 }
-header .slider {
+#home .slider {
    display: inline-block;
    vertical-align: middle;
    margin: 0 auto;
@@ -59,47 +59,47 @@ header .slider {
    text-align: center;
 }
 
-header .banner-text { width: 100%; }
-header .banner-text h1 {
+#home .banner-text { width: 100%; }
+#home .banner-text h1 {
    color: #fff;
    letter-spacing: -2px;
    margin: 0 auto 18px auto;
    text-shadow: 0px 1px 3px rgba(0, 0, 0, .8);
 }
-header .banner-text h3 {
+#home .banner-text h3 {
    color: #A8A8A8;
    margin: 0 auto;
    width: 70%;
    text-shadow: 0px 1px 2px rgba(0, 0, 0, .5);
 }
-header .banner-text h3 span,
-header .banner-text h3 a {
+#home .banner-text h3 span,
+#home .banner-text h3 a {
    color: #fff;
 }
-header .banner-text hr {
+#home .banner-text hr {
    width: 60%;
    margin: 18px auto 24px auto;
    border-color: #2F2D2E;
    border-color: rgba(150, 150, 150, .1);
 }
 
-/* header social links */
-header .social {
+/* #home social links */
+#home .social {
    margin: 24px 0;
    padding: 0;
    font-size: 30px;
    text-shadow: 0px 1px 2px rgba(0, 0, 0, .8);
 }
-header .social li {
+#home .social li {
    display: inline-block;
    margin: 0 15px;
    padding: 0;
 }
-header .social li a { color: #fff; }
-header .social li a:hover { color: #11ABB0; }
+#home .social li a { color: #fff; }
+#home .social li a:hover { color: #11ABB0; }
 
 /* scrolldown link */
-header .scrolldown a {
+#home .scrolldown a {
    position: absolute;
    bottom: 30px;
    left: 50%;
@@ -118,7 +118,7 @@ header .scrolldown a {
    -o-transition: all .3s ease-in-out;
    transition: all .3s ease-in-out;
 }
-header .scrolldown a:hover { color: #11ABB0; }
+#home .scrolldown a:hover { color: #11ABB0; }
 
 /* primary navigation
 --------------------------------------------------------------------- */
@@ -347,6 +347,7 @@ section {
 }
 #product ul {
     text-align: center;
+    margin-top: -16px;
 }
 #product ul.item > li {
     display: inline-block;
