@@ -345,11 +345,11 @@ section {
 #product .section-inner.cf {
     width: 1110px;
 }
-#product ul {
+#product .item {
     text-align: center;
     margin-top: -16px;
 }
-#product ul.item > li {
+#product .item > li {
     display: inline-block;
     margin: 25px;
 }
