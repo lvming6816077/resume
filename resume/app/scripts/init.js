@@ -32,18 +32,14 @@
     changeProfile();
 
   });
-/*----------------------------------------------------*/
-/* FitText Settings
------------------------------------------------------- */
+
 
   //   setTimeout(function() {
 	 //   $('h1.responsive-headline').fitText(1, { minFontSize: '40px', maxFontSize: '90px' });
 	 // }, 100);
 
 new WOW().init();
-/*----------------------------------------------------*/
-/* Smooth Scrolling
------------------------------------------------------- */
+
 
    $('.smoothscroll').on('click',function (e) {
 	    e.preventDefault();
@@ -58,9 +54,7 @@ new WOW().init();
 	});
 
 
-/*----------------------------------------------------*/
-/* Highlight the current section in the navigation bar
-------------------------------------------------------*/
+
 
 	var sections = $("section");
 	var navigation_links = $("#nav-wrap a");
@@ -73,7 +67,6 @@ new WOW().init();
 			active_section = $(this);
       
 			if (direction === "up") active_section = active_section.prevAll('section').eq(0);
-      console.log(active_section);
 			var active_link = $('#nav-wrap a[href="#' + active_section.attr("id") + '"]');
 
          navigation_links.parent().removeClass("current");
@@ -85,25 +78,20 @@ new WOW().init();
 	});
 
 
-/*----------------------------------------------------*/
-/*	Make sure that #header-background-image height is
-/* equal to the browser height.
------------------------------------------------------- */
 
    $('section').not('#contact').css({ 'height': $(window).height() });
+   $('#contact').css({ 'height': $(window).height()-48 });
    $('#my_profile').css({ 'height': $(window).height() });
    
-   $(window).on('resize', function() {
-        $('#my_profile').css({ 'height': $(window).height() });
-        $('#home').css({ 'height': $(window).height() });
-        $('body').css({ 'width': $(window).width() })
-   });
+   // $(window).on('resize', function() {
+   //      $('#my_profile').css({ 'height': $(window).height() });
+   //      $('#home').css({ 'height': $(window).height() });
+   //      $('body').css({ 'width': $(window).width() })
+   // });
 
 
-/*----------------------------------------------------*/
-/*	Fade In/Out Primary Navigation
-------------------------------------------------------*/
-var flag = true;
+
+  var flag = true;
     function changeSkillWidth(windowTop) {
         var skillTop = $('#skill').offset().top;
         if (windowTop >= skillTop && flag) {
@@ -229,83 +217,7 @@ var flag = true;
        }
        
    });
-/*----------------------------------------------------*/
-/*	Modal Popup
-------------------------------------------------------*/
 
-    // $('.item-wrap a').magnificPopup({
-
-    //    type:'inline',
-    //    fixedContentPos: false,
-    //    removalDelay: 200,
-    //    showCloseBtn: false,
-    //    mainClass: 'mfp-fade'
-
-    // });
-
-    // $(document).on('click', '.popup-modal-dismiss', function (e) {
-    // 		e.preventDefault();
-    // 		$.magnificPopup.close();
-    // });
-
-
-/*----------------------------------------------------*/
-/*	Flexslider
-/*----------------------------------------------------*/
-   // $('.flexslider').flexslider({
-   //    namespace: "flex-",
-   //    controlsContainer: ".flex-container",
-   //    animation: 'slide',
-   //    controlNav: true,
-   //    directionNav: false,
-   //    smoothHeight: true,
-   //    slideshowSpeed: 7000,
-   //    animationSpeed: 600,
-   //    randomize: false,
-   // });
-
-/*----------------------------------------------------*/
-/*	contact form
-------------------------------------------------------*/
-
-   // $('form#contactForm button.submit').click(function() {
-
-   //    $('#image-loader').fadeIn();
-
-   //    var contactName = $('#contactForm #contactName').val();
-   //    var contactEmail = $('#contactForm #contactEmail').val();
-   //    var contactSubject = $('#contactForm #contactSubject').val();
-   //    var contactMessage = $('#contactForm #contactMessage').val();
-
-   //    var data = 'contactName=' + contactName + '&contactEmail=' + contactEmail +
-   //             '&contactSubject=' + contactSubject + '&contactMessage=' + contactMessage;
-
-   //    $.ajax({
-
-	  //     type: "POST",
-	  //     url: "inc/sendEmail.php",
-	  //     data: data,
-	  //     success: function(msg) {
-
-   //          // Message was sent
-   //          if (msg == 'OK') {
-   //             $('#image-loader').fadeOut();
-   //             $('#message-warning').hide();
-   //             $('#contactForm').fadeOut();
-   //             $('#message-success').fadeIn();   
-   //          }
-   //          // There was an error
-   //          else {
-   //             $('#image-loader').fadeOut();
-   //             $('#message-warning').html(msg);
-	  //           $('#message-warning').fadeIn();
-   //          }
-
-	  //     }
-
-   //    });
-   //    return false;
-   // });
 
 
 });

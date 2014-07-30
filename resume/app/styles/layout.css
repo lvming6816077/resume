@@ -182,7 +182,6 @@ ul#nav li a:active { background-color: transparent !important; }
 ul#nav li.current a { color: #F06000; }
 section.cf {
     position: relative;
-    min-height: 700px;
 }
 section {
     overflow: hidden;
@@ -202,9 +201,6 @@ section {
     margin: 0 auto;
     margin-bottom: 200px;
 }
-.section-info {
-    margin-top: 80px;
-}
 .section-inner .divider-line {
     height: 5px;
     width: 100px;
@@ -213,7 +209,6 @@ section {
 
 .title-icon{
     position: absolute;
-    bottom: 60px;
     left: 49%;
     text-align: center;
     font-size: 45px;
@@ -356,8 +351,8 @@ section {
 #product .product-wrap {
     overflow: hidden;
     position: relative;
-    width: 300px;
-    height: 172px;
+    width: 280px;
+    height: 170px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, .5), 0 2px 3px rgba(0, 0, 0, .5);
     -webkit-transition: all 0.4s;
 }
@@ -555,4 +550,20 @@ section {
     margin-top: 6px;
     text-align: center;
     background: transparent;
+}
+@media screen and (min-height: 700px) {
+  .section-info {
+    margin-top: 80px;
+  }
+  .title-icon {
+    bottom: 50px;
+  }
+}
+@media screen and (max-height: 700px) {
+  .section-info {
+    margin-top: 50px;
+  }
+  .title-icon {
+    bottom: 10px;
+  }
 }

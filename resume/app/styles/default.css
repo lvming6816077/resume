@@ -139,7 +139,7 @@ html {
 }
 @font-face {
    font-family: 'FZZZHO';
-   src: url('fonts/FZZZHONGHJW_0.ttf');
+   src: url('http://tenny.qiniudn.com/FZZZHONGHJW_0.TTF');
 }
 body {
    background: #fff;
